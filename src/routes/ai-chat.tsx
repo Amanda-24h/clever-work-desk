@@ -60,7 +60,7 @@ function AIChatPage() {
     setMessages((m) => [...m, { role: "user", text: trimmed }]);
     setInput("");
     setThinking(true);
-    const reply = cannedReplies[replyIndex.current % cannedReplies.length];
+    const reply = cannedReplies[replyIndex.current % cannedReplies.length] ?? cannedReplies[0]!;
     replyIndex.current += 1;
     window.setTimeout(() => {
       setMessages((m) => [...m, { role: "assistant", text: reply }]);
